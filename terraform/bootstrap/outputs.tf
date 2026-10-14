@@ -11,11 +11,12 @@ output "folder_id" {
 
 output "access_key" {
   sensitive = true
-  value     = yandex_iam_service_account_static_access_key.key.access_key
+  value     = yandex_iam_service_account_static_access_key.st_key.access_key
 
 }
 
 output "secret_key" {
   sensitive = true
-  value     = yandex_iam_service_account_static_access_key.key.secret_key
+  value     = yandex_iam_service_account_static_access_key.st_key.secret_key
 }
+
