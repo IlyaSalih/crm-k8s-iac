@@ -11,7 +11,7 @@ variable "billing_account_id" {
 variable "project" {
   description = "Имя проекта: имя облака и префикс для остальных ресурсов"
   type        = string
-  default     = "crm-k8s-iac"
+  default     = "crm-k8s"
 }
 
 variable "zone" {
