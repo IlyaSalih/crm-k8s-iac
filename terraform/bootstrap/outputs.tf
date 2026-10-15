@@ -20,3 +20,7 @@ output "secret_key" {
   value     = yandex_iam_service_account_static_access_key.st_key.secret_key
 }
 
+output "bucket" {
+  value = yandex_storage_bucket.tfstate.bucket
+
+}
