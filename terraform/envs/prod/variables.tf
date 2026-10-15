@@ -14,3 +14,14 @@ variable "zone" {
   default     = "ru-central1-a"
 }
 
+variable "project" {
+  description = "Название проекта"
+  type        = string
+  default     = "crm-k8s"
+}
+
+variable "subnet_cidr" {
+  description = "Диапазон адресов"
+  type        = string
+  default     = "10.10.0.0/24"
+}
