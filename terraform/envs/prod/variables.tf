@@ -21,7 +21,12 @@ variable "project" {
 }
 
 variable "subnet_cidr" {
-  description = "Диапазон адресов"
+  description = "CIDR подсети нод кластера"
   type        = string
   default     = "10.10.0.0/24"
+}
+
+variable "admin_cidrs" {
+  description = "Адреса администратора в формате CIDR: доступ к SSH и API Kubernetes"
+  type        = list(string)
 }
