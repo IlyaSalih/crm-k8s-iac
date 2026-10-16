@@ -2,7 +2,6 @@ resource "yandex_vpc_network" "this" {
   name = "${var.project}-network"
 }
 
-
 resource "yandex_vpc_subnet" "this" {
   for_each = var.subnets
 
