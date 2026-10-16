@@ -3,14 +3,10 @@ variable "project" {
   type        = string
 }
 
-variable "zone" {
-  description = "Зона доступности подсети"
-  type        = string
-}
+variable "subnets" {
+  description = "Подсети по зонам: ключ — зона доступности, значение — CIDR"
+  type        = map(string)
 
-variable "subnet_cidr" {
-  description = "Диапазон IP адресов подсети"
-  type        = string
 }
 
 variable "admin_cidrs" {

@@ -4,10 +4,12 @@ resource "yandex_vpc_network" "this" {
 
 
 resource "yandex_vpc_subnet" "this" {
-  name           = "${var.project}-subnet"
-  zone           = var.zone
+  for_each = var.subnets
+
+  name           = "${var.project}-subnet-${each.key}"
+  zone           = each.key
   network_id     = yandex_vpc_network.this.id
-  v4_cidr_blocks = [var.subnet_cidr]
+  v4_cidr_blocks = [each.value]
   route_table_id = yandex_vpc_route_table.table.id
 }
 

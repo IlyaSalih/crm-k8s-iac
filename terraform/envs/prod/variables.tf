@@ -20,10 +20,14 @@ variable "project" {
   default     = "crm-k8s"
 }
 
-variable "subnet_cidr" {
-  description = "CIDR подсети нод кластера"
-  type        = string
-  default     = "10.10.0.0/24"
+variable "subnets" {
+  description = "Подсети по зонам ключ - зона доступности, значение - CIDR"
+  type        = map(string)
+  default = {
+    "ru-central1-a" = "10.10.1.0/24"
+    "ru-central1-b" = "10.10.2.0/24"
+    "ru-central1-d" = "10.10.3.0/24"
+  }
 }
 
 variable "admin_cidrs" {
