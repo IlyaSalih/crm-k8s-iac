@@ -17,3 +17,11 @@ module "compute" {
   masters             = var.masters
   workers             = var.workers
 }
+
+module "balancer" {
+  source = "../../modules/balancer"
+
+  project = var.project
+  targets = module.compute.worker_targets
+
+}
